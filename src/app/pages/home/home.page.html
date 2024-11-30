@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="header-title">
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+
+  <div class="viajes-container">
+    <ion-list>
+      <h1>Lista de Viajes</h1>
+      <ion-item *ngFor="let viaje of viajes">
+        <ion-label class="viaje-info">
+          Dirección: {{ viaje.direccion }} <br>
+          Valor: {{ viaje.valor }} - Capacidad: {{ viaje.capacidad }}
+        </ion-label>
+        <!-- Botón para cada viaje -->
+        <ion-button expand="full" color="primary" routerLink="/crear-qr">Pedir Viaje</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="input-container">
+    <ion-input [(ngModel)]="mi_direccion" placeholder="Ingrese dirección" label="Buscar Dirección"></ion-input>
+    <ion-button color="primary" (click)="buscarDireccion()">Buscar</ion-button>
+    <ion-select (ionChange)="seleccion($event)" label="Indicaciones" placeholder="Seleccione...">
+      <ion-select-option [value]="direccion" *ngFor="let direccion of arreglo_direcciones">
+        {{ direccion.place_name }}
+      </ion-select-option>
+    </ion-select>
+    <ion-button color="primary">Solicitar viaje a conductores</ion-button>
+  </div>
+
+  <div id="mapa-box" class="mapa-container"></div>
+</ion-content>
+
+<ion-footer class="footer-container">
+  <ion-button color="warning" expand="block" routerLink="/crear-qr">Pedir Viaje</ion-button>
+</ion-footer>

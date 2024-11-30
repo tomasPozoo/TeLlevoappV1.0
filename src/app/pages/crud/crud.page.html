@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Gestión de Pasajeros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <h2>Agregar Pasajeros</h2>
+    <div class="input-container">
+      <ion-item class="input-field">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="item.nombre" placeholder="Ingrese nombre"></ion-input>
+      </ion-item>
+      <ion-item class="input-field">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input [(ngModel)]="item.apellido" placeholder="Ingrese apellido"></ion-input>
+      </ion-item>
+      <ion-button expand="block" color="success" (click)="grabar()">Grabar</ion-button>
+    </div>
+
+    <h3>Lista de Pasajeros al viaje</h3>
+    <ion-grid>
+      <ion-row *ngFor="let item of lista" class="list-item">
+        <ion-col size="8">
+          <ion-label>{{item.nombre}} {{item.apellido}}</ion-label>
+        </ion-col>
+        <ion-col size="4" class="button-container">
+          <ion-button color="danger" (click)="eliminar(item.id)">Eliminar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-col size="12" class="button-container">
+    <ion-button routerLink="/leer-qr" expand="full" color="danger" >Leer codigo Qr</ion-button>
+    <ion-button routerLink="/anime" expand="full" color="danger" >viaje terminado</ion-button>
+  </ion-col>
+  
+</ion-content>

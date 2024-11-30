@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Olvidé mi contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="form-card">
+    <div><img src="../../../assets/img/login.webp" alt=""></div>
+    <ion-item color="aaa" lines="none">
+      <div class="input-container">
+        <input id="custom-input" type="email" [(ngModel)]="emailValue" required placeholder="Correo electrónico">
+      </div>
+    </ion-item>
+    <ion-button id="custom-button" expand="block" color="dark" (click)="sendVerificationCode()">Enviar Código</ion-button>
+
+    <ion-card color="aaa">
+      <ion-card-content>
+        <ion-item color="aaa" lines="none">
+          <div class="input-container">
+            <input id="custom-input" type="text" [(ngModel)]="verificationCode" required placeholder="Código de verificación">
+          </div>
+        </ion-item>
+      
+        <ion-item color="aaa" lines="none">
+          <div class="input-container">
+            <input id="custom-input" type="password" [(ngModel)]="newPassword" required placeholder="Nueva contraseña">
+          </div>
+        </ion-item>
+        <ion-button expand="full" color="tertiary" (click)="resetPassword()">Restablecer Contraseña</ion-button>
+        <ion-button  routerLink="/login" expand="full" color="tertiary" >VOlVER A INICIO DE SESION</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección para mostrar el mensaje -->
+    <div *ngIf="message" class="message">
+      <ion-text color="dark">{{ message }}</ion-text>
+    </div>
+  </div>
+</ion-content>

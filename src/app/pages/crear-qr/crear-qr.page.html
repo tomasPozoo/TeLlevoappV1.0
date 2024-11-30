@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>crear-qr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="confirmation-message">
+    <h2>¡Viaje Confirmado!</h2>
+    <p>Muestra este código QR a tu conductor.</p>
+  </div>
+
+  <qr-code id="qr" value="Hello world!" 
+  size="300" 
+  errorCorrectionLevel="M" />
+  
+  <div>
+    <ion-button  routerLink="/anime" expand="full">Viaje tomado</ion-button>
+  </div>
+
+</ion-content>

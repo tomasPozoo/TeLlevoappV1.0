@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <img src="../../../assets/img/login.webp" alt="">
+   </div>
+   <div>
+     <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="email" required label="Usuario:" type="email" placeholder="ingrese usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input [(ngModel)]="pass" required type="password" label="Contraseña:" placeholder="ingrese contraseña"></ion-input>
+      </ion-item>
+    
+      <ion-button expand="full"(click)="login()">Aceptar</ion-button>
+      <ion-button  routerLink="/crear" expand="full">Crear Cuenta</ion-button>
+      <ion-button routerLink="/olvide" expand="full">Olvide mi contraseña</ion-button>
+     </ion-list>
+   </div>
+
+</ion-content>

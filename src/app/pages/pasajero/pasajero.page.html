@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div class="container">
+    
+    <!-- Mensaje de confirmación -->
+    <div class="confirmation-message">
+      <h2>¡Viaje Confirmado!</h2>
+      <p>Muestra este código QR a tu conductor.</p>
+    </div>
+
+    <!-- Código QR -->
+    <div class="qr-container">
+      <img src="assets/img/codigo.png" alt="Código QR" class="qr-code" />
+    </div>
+    <div>
+      <ion-button  routerLink="/anime" expand="full">Viaje tomado</ion-button>
+    </div>
+  
+  </div>
+</ion-content>

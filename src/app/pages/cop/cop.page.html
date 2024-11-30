@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">¿Eres Pasajero o Conductor?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="role-cards">
+    <!-- Tarjeta Conductor -->
+    <ion-card  class="role-card">
+      <ion-card-header>
+        <ion-card-title>Soy Conductor</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="../../../assets/img/pasa.jpg" alt="Conductor" class="role-image" />
+        <ion-button routerLink="/homec" expand="block" color="primary" >
+          Seleccionar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Tarjeta Pasajero -->
+    <ion-card class="role-card">
+      <ion-card-header>
+        <ion-card-title>Soy Pasajero</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <img src="../../../assets/img/pasajero.png" alt="Pasajero" class="role-image" />
+        <ion-button routerLink="/home" expand="block" color="secondary" >
+          Seleccionar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

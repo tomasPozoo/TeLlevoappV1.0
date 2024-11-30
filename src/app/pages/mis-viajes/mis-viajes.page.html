@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mis Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let viaje of viajes">
+      <ion-label>
+        <h2>{{ viaje.direccion }}</h2>
+        <p><strong>Lugar:</strong> {{ viaje.lugar_encuentro }}</p>
+        <p><strong>Hora:</strong> {{ viaje.hora_encuentro }}</p>
+        <p><strong>Capacidad:</strong> {{ viaje.capacidad }}</p>
+        <p><strong>Precio:</strong> {{ viaje.precio }}</p>
+      </ion-label>
+      <ion-button color="danger" slot="end" (click)="eliminarViaje(viaje.id)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

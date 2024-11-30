@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      TeLlevoAPP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content-container">
+    <!--dirección -->
+    <ion-item>
+      <ion-label position="floating">Buscar dirección</ion-label>
+      <ion-input [(ngModel)]="mi_direccion" placeholder="Ingrese dirección"></ion-input>
+    </ion-item>
+    
+    <!--búsqueda -->
+    <ion-button expand="full" color="primary" (click)="buscarDireccion()" style="margin-top: 10px;">
+      Buscar
+    </ion-button>
+    
+    <!-- Selección  -->
+    <ion-item style="margin-top: 15px;">
+      <ion-label>Indicaciones</ion-label>
+      <ion-select (ionChange)="seleccion($event)" placeholder="Seleccione...">
+        <ion-select-option [value]="direccion" *ngFor="let direccion of arreglo_direcciones">
+          {{direccion.place_name}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Campo para Capacidad de Pasajeros -->
+    <ion-item style="margin-top: 15px;">
+      <ion-label position="floating">Capacidad de pasajeros</ion-label>
+      <ion-input [(ngModel)]="capacidadPasajeros" type="number" placeholder="Ingrese capacidad"></ion-input>
+    </ion-item>
+
+    <!-- Campo para Destino -->
+    <ion-item>
+      <ion-label position="floating">Destino</ion-label>
+      <ion-input [(ngModel)]="destino" placeholder="Ingrese destino"></ion-input>
+    </ion-item>
+
+    <!-- Campo para Hora de Encuentro -->
+    <ion-item>
+      <ion-label position="floating">Hora de Encuentro</ion-label>
+      <ion-datetime [(ngModel)]="horaEncuentro" displayFormat="HH:mm" placeholder="Seleccione hora"></ion-datetime>
+    </ion-item>
+
+    <!-- Campo para Lugar de Encuentro -->
+    <ion-item>
+      <ion-label position="floating">Lugar de Encuentro</ion-label>
+      <ion-input [(ngModel)]="lugarEncuentro" placeholder="Ingrese lugar de encuentro"></ion-input>
+    </ion-item>
+
+    <!-- Campo para Precio -->
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input [(ngModel)]="precio" type="number" placeholder="Ingrese precio"></ion-input>
+    </ion-item>
+  </div>
+
+  <!-- Contenedor del mapa -->
+  <div id="mapa-box"></div>
+</ion-content>
+
+<ion-footer style="text-align: center; padding: 20px; background-color: rgb(6, 12, 0);">
+  <ion-button expand="full" color="success" (click)="publicarViaje()"routerLink="/mis-viajes">Publicar viaje</ion-button>
+  <ion-button expand="full" color="success" routerLink="/pasajero">Aceptar</ion-button>
+  <ion-button expand="full" color="success" routerLink="/mis-viajes">Ver mis viajes</ion-button>
+</ion-footer>
+
+

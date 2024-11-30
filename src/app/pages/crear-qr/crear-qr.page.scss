@@ -1,0 +1,38 @@
+ion-content {
+    --background: #f0f0f5; /* Fondo suave para la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .confirmation-message {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333; /* Color de texto más oscuro */
+  }
+  
+  .confirmation-message h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50; /* Color verde para resaltar el éxito de la confirmación */
+    margin: 0;
+  }
+  
+  .confirmation-message p {
+    font-size: 16px;
+    color: #555; /* Texto más sutil para el mensaje adicional */
+    margin-top: 8px;
+  }
+  
+  #qr {
+    display: block;
+    margin: 20px auto; /* Centra el código QR */
+    padding: 10px;
+    background-color: #fff; /* Fondo blanco para destacar el QR */
+    border: 4px solid #4CAF50; /* Borde verde alrededor del QR */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  }
+  
